@@ -11,6 +11,13 @@ connectionDatabase();
 app.use(express.json());
 
 // Routes
+app.get("/", (req, res) => {
+  res.json({
+    status: true,
+    message: "Server is running",
+  });
+});
+
 app.use("/todos", todoRoutes);
 
 app.listen(3000, () => {
